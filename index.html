@@ -4,11 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>NovaShop — Zamonaviy Online Do‘kon</title>
+    <title>CARZONE — Premium Avtomobil Savdosi</title>
+
+    <meta
+        name="description"
+        content="Zamonaviy avtomobil savdosi platformasi"
+    >
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
 
     <link rel="stylesheet" href="style.css">
 </head>
@@ -17,56 +31,93 @@
 
 <!-- ================= HEADER ================= -->
 
-<header class="header">
+<header class="header" id="header">
 
     <div class="container nav">
 
-        <a href="#" class="logo" onclick="goHome()">
-            <span class="logo-icon">N</span>
-            <span>Nova<span>Shop</span></span>
+        <a href="#home" class="logo">
+            <span class="logo-icon">
+                <i class="fa-solid fa-car-side"></i>
+            </span>
+
+            <span>
+                <strong>CAR</strong>ZONE
+            </span>
         </a>
 
         <nav class="desktop-nav">
-            <a href="#" onclick="goHome()">Bosh sahifa</a>
-            <a href="#products">Mahsulotlar</a>
-            <a href="#categories">Kategoriyalar</a>
-            <a href="#advantages">Afzalliklar</a>
+
+            <a href="#home" class="nav-link active">
+                Bosh sahifa
+            </a>
+
+            <a href="#categories" class="nav-link">
+                Kategoriyalar
+            </a>
+
+            <a href="#cars" class="nav-link">
+                Avtomobillar
+            </a>
+
+            <a href="#favorites" class="nav-link">
+                Sevimlilar
+                <span class="nav-count" id="favoriteCount">0</span>
+            </a>
+
+            <a href="#about" class="nav-link">
+                Biz haqimizda
+            </a>
+
         </nav>
 
         <div class="nav-actions">
 
-            <button class="icon-btn" onclick="toggleTheme()" title="Rejim">
-                <span id="themeIcon">🌙</span>
+            <button
+                class="icon-btn"
+                id="themeBtn"
+                type="button"
+                aria-label="Tema"
+            >
+                <i class="fa-solid fa-moon"></i>
             </button>
 
-            <button class="icon-btn" onclick="openFavorites()">
-                ❤️
-                <span class="count" id="favoriteCount">0</span>
+            <button
+                class="sell-btn"
+                id="sellBtn"
+                type="button"
+            >
+                <i class="fa-solid fa-plus"></i>
+                Mashina sotish
             </button>
 
-            <button class="icon-btn" onclick="openCart()">
-                🛒
-                <span class="count" id="cartCount">0</span>
-            </button>
-
-            <button class="login-btn" onclick="openAuth()">
-                👤 Kirish
-            </button>
-
-            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
-                ☰
+            <button
+                class="menu-btn"
+                id="menuBtn"
+                type="button"
+                aria-label="Menyu"
+            >
+                <i class="fa-solid fa-bars"></i>
             </button>
 
         </div>
 
     </div>
 
+    <!-- MOBILE MENU -->
+
     <div class="mobile-menu" id="mobileMenu">
-        <a href="#" onclick="goHome()">Bosh sahifa</a>
-        <a href="#products" onclick="closeMobileMenu()">Mahsulotlar</a>
-        <a href="#categories" onclick="closeMobileMenu()">Kategoriyalar</a>
-        <a href="#advantages" onclick="closeMobileMenu()">Afzalliklar</a>
-        <button onclick="openAuth()">👤 Kirish</button>
+
+        <a href="#home">Bosh sahifa</a>
+        <a href="#categories">Kategoriyalar</a>
+        <a href="#cars">Avtomobillar</a>
+        <a href="#favorites">Sevimlilar</a>
+        <a href="#about">Biz haqimizda</a>
+
+        <button id="mobileSellBtn">
+            <i class="fa-solid fa-plus"></i>
+            Mashina sotish
+        </button>
+
     </div>
 
 </header>
@@ -74,85 +125,63 @@
 
 <!-- ================= HERO ================= -->
 
-<section class="hero">
+<main>
+
+<section class="hero" id="home">
+
+    <div class="hero-overlay"></div>
 
     <div class="container hero-content">
 
         <div class="hero-text">
 
-            <div class="badge">
-                ✨ Yangi kolleksiya
-            </div>
+            <span class="hero-badge">
+                <i class="fa-solid fa-shield-halved"></i>
+                Ishonchli avtomobil bozori
+            </span>
 
             <h1>
-                Zamonaviy hayot uchun
-                <span>zamonaviy mahsulotlar.</span>
+                O'zingizga mos
+                <span>avtomobilni</span>
+                toping
             </h1>
 
             <p>
-                Texnologiya, moda, uy jihozlari va kundalik hayot
-                uchun kerakli mahsulotlarni bir joydan toping.
+                Dunyoning mashhur brendlaridan minglab zamonaviy
+                avtomobillarni bir joydan qidiring, solishtiring
+                va tanlang.
             </p>
 
             <div class="hero-buttons">
 
-                <button class="primary-btn" onclick="scrollToProducts()">
-                    Xarid qilish →
-                </button>
+                <a href="#cars" class="primary-btn">
+                    Avtomobillarni ko'rish
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
 
-                <button class="secondary-btn" onclick="scrollToCategories()">
+                <a href="#categories" class="secondary-btn">
                     Kategoriyalar
-                </button>
+                </a>
 
             </div>
 
             <div class="hero-stats">
 
                 <div>
-                    <strong>10K+</strong>
-                    <span>Mijozlar</span>
+                    <strong>96+</strong>
+                    <span>Avtomobil</span>
                 </div>
 
                 <div>
-                    <strong>500+</strong>
-                    <span>Mahsulot</span>
+                    <strong>30+</strong>
+                    <span>Brend</span>
                 </div>
 
                 <div>
-                    <strong>4.9</strong>
-                    <span>Reyting</span>
+                    <strong>24/7</strong>
+                    <span>Xizmat</span>
                 </div>
 
-            </div>
-
-        </div>
-
-
-        <div class="hero-visual">
-
-            <div class="hero-card main-product">
-
-                <div class="discount">-20%</div>
-
-                <img
-                    src="https://images.unsplash.com/photo-1590658268037-6bf12165a8df?auto=format&fit=crop&w=900&q=85"
-                    alt="AirPods"
-                >
-
-                <div class="floating-info">
-                    <span>Premium audio</span>
-                    <strong>AirPods Pro</strong>
-                    <b>1 899 000 so'm</b>
-                </div>
-
-            </div>
-
-            <div class="floating floating-one">
-                ⭐ 4.9
-            </div>
-
-            <div class="floating floating-two">
-                🚚 Tez yetkazish
             </div>
 
         </div>
@@ -170,16 +199,35 @@
 
         <div class="search-box">
 
-            <span>🔎</span>
+            <div class="search-input-wrap">
 
-            <input
-                id="searchInput"
-                type="text"
-                placeholder="Mahsulot qidiring..."
-                oninput="searchProducts()"
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="BMW, Mercedes, Tesla yoki model qidiring..."
+                    autocomplete="off"
+                >
+
+                <button
+                    type="button"
+                    id="clearSearch"
+                    class="clear-search"
+                    title="Tozalash"
+                >
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+
+            </div>
+
+            <button
+                class="search-btn"
+                id="searchBtn"
+                type="button"
             >
-
-            <button onclick="clearSearch()">✕</button>
+                Qidirish
+            </button>
 
         </div>
 
@@ -190,59 +238,129 @@
 
 <!-- ================= CATEGORIES ================= -->
 
-<section class="categories-section" id="categories">
+<section class="section categories-section" id="categories">
 
     <div class="container">
 
-        <div class="section-head">
+        <div class="section-heading">
 
             <div>
-                <span class="section-label">KO‘RIB CHIQING</span>
-                <h2>Kategoriyalar</h2>
+                <span class="eyebrow">
+                    KATEGORIYALAR
+                </span>
+
+                <h2>
+                    O'zingizga mosini tanlang
+                </h2>
             </div>
+
+            <p>
+                Har bir kategoriya ichida 20 dan ortiq
+                zamonaviy avtomobil mavjud.
+            </p>
 
         </div>
 
-        <div class="categories">
 
-            <button class="category active" data-category="all" onclick="filterCategory('all', this)">
-                <span>✨</span>
-                <div>
-                    <strong>Barchasi</strong>
-                    <small>Barcha mahsulotlar</small>
+        <div class="category-grid">
+
+            <button
+                class="category-card active"
+                data-category="all"
+                type="button"
+            >
+
+                <div class="category-image all-image">
+                    <i class="fa-solid fa-car"></i>
                 </div>
+
+                <div class="category-info">
+                    <h3>Barchasi</h3>
+                    <span>96+ avtomobil</span>
+                </div>
+
+                <i class="fa-solid fa-arrow-right"></i>
+
             </button>
 
-            <button class="category" data-category="electronics" onclick="filterCategory('electronics', this)">
-                <span>💻</span>
-                <div>
-                    <strong>Elektronika</strong>
-                    <small>Telefon & texnika</small>
+
+            <button
+                class="category-card"
+                data-category="Luxury"
+                type="button"
+            >
+
+                <div class="category-image luxury-image">
+                    <i class="fa-solid fa-gem"></i>
                 </div>
+
+                <div class="category-info">
+                    <h3>Luxury</h3>
+                    <span>24+ avtomobil</span>
+                </div>
+
+                <i class="fa-solid fa-arrow-right"></i>
+
             </button>
 
-            <button class="category" data-category="fashion" onclick="filterCategory('fashion', this)">
-                <span>👕</span>
-                <div>
-                    <strong>Moda</strong>
-                    <small>Kiyim & aksessuar</small>
+
+            <button
+                class="category-card"
+                data-category="Sport"
+                type="button"
+            >
+
+                <div class="category-image sport-image">
+                    <i class="fa-solid fa-gauge-high"></i>
                 </div>
+
+                <div class="category-info">
+                    <h3>Sport</h3>
+                    <span>24+ avtomobil</span>
+                </div>
+
+                <i class="fa-solid fa-arrow-right"></i>
+
             </button>
 
-            <button class="category" data-category="home" onclick="filterCategory('home', this)">
-                <span>🏠</span>
-                <div>
-                    <strong>Uy</strong>
-                    <small>Uy uchun</small>
+
+            <button
+                class="category-card"
+                data-category="SUV"
+                type="button"
+            >
+
+                <div class="category-image suv-image">
+                    <i class="fa-solid fa-mountain"></i>
                 </div>
+
+                <div class="category-info">
+                    <h3>SUV</h3>
+                    <span>24+ avtomobil</span>
+                </div>
+
+                <i class="fa-solid fa-arrow-right"></i>
+
             </button>
 
-            <button class="category" data-category="sport" onclick="filterCategory('sport', this)">
-                <span>⚽</span>
-                <div>
-                    <strong>Sport</strong>
-                    <small>Sport mahsulotlari</small>
+
+            <button
+                class="category-card"
+                data-category="Sedan"
+                type="button"
+            >
+
+                <div class="category-image sedan-image">
+                    <i class="fa-solid fa-car-rear"></i>
                 </div>
+
+                <div class="category-info">
+                    <h3>Sedan</h3>
+                    <span>24+ avtomobil</span>
+                </div>
+
+                <i class="fa-solid fa-arrow-right"></i>
+
             </button>
 
         </div>
@@ -252,31 +370,128 @@
 </section>
 
 
-<!-- ================= PRODUCTS ================= -->
+<!-- ================= CARS ================= -->
 
-<section class="products-section" id="products">
+<section class="section cars-section" id="cars">
 
     <div class="container">
 
-        <div class="section-head">
+        <div class="section-heading cars-heading">
 
             <div>
-                <span class="section-label">TOP MAHSULOTLAR</span>
-                <h2>Siz uchun tanladik</h2>
+
+                <span class="eyebrow">
+                    AVTOMOBILLAR
+                </span>
+
+                <h2>
+                    Eng yaxshi avtomobillar
+                </h2>
+
+                <p id="resultText">
+                    96 ta avtomobil topildi
+                </p>
+
             </div>
 
-            <div class="result-text" id="resultText">
-                12 ta mahsulot
+            <div class="filter-actions">
+
+                <select id="brandFilter">
+                    <option value="all">
+                        Barcha brendlar
+                    </option>
+                </select>
+
+                <select id="priceFilter">
+
+                    <option value="all">
+                        Barcha narxlar
+                    </option>
+
+                    <option value="0-30000">
+                        $30,000 gacha
+                    </option>
+
+                    <option value="30000-60000">
+                        $30,000 - $60,000
+                    </option>
+
+                    <option value="60000-100000">
+                        $60,000 - $100,000
+                    </option>
+
+                    <option value="100000-999999">
+                        $100,000+
+                    </option>
+
+                </select>
+
+                <select id="sortSelect">
+
+                    <option value="popular">
+                        Mashhurlar
+                    </option>
+
+                    <option value="price-low">
+                        Narx: arzon
+                    </option>
+
+                    <option value="price-high">
+                        Narx: qimmat
+                    </option>
+
+                    <option value="year">
+                        Yangi
+                    </option>
+
+                    <option value="name">
+                        Nomi
+                    </option>
+
+                </select>
+
             </div>
 
         </div>
 
-        <div class="products-grid" id="productsGrid"></div>
+
+        <div class="cars-grid" id="carsGrid"></div>
+
 
         <div class="empty-state" id="emptyState">
-            <div>🔎</div>
-            <h3>Mahsulot topilmadi</h3>
-            <p>Boshqa nom yoki kategoriya bilan qidirib ko‘ring.</p>
+
+            <div class="empty-icon">
+                <i class="fa-solid fa-car-burst"></i>
+            </div>
+
+            <h3>Avtomobil topilmadi</h3>
+
+            <p>
+                Qidiruv yoki filterlarni o'zgartirib ko'ring.
+            </p>
+
+            <button
+                type="button"
+                id="resetFilters"
+                class="primary-btn"
+            >
+                Filterlarni tozalash
+            </button>
+
+        </div>
+
+
+        <div class="load-more-wrap">
+
+            <button
+                class="load-more"
+                id="loadMore"
+                type="button"
+            >
+                Ko'proq avtomobil
+                <i class="fa-solid fa-chevron-down"></i>
+            </button>
+
         </div>
 
     </div>
@@ -284,33 +499,150 @@
 </section>
 
 
-<!-- ================= PROMO ================= -->
+<!-- ================= FAVORITES ================= -->
 
-<section class="promo">
+<section class="section favorites-section" id="favorites">
 
-    <div class="container promo-box">
+    <div class="container">
 
-        <div>
+        <div class="section-heading">
 
-            <span>🔥 BUGUNGI TAKLIF</span>
+            <div>
+
+                <span class="eyebrow">
+                    SAQLANGANLAR
+                </span>
+
+                <h2>
+                    Sevimli avtomobillaringiz
+                </h2>
+
+            </div>
+
+            <p>
+                Yurakcha tugmasi orqali yoqqan avtomobillaringizni saqlang.
+            </p>
+
+        </div>
+
+
+        <div
+            class="cars-grid favorites-grid"
+            id="favoritesGrid"
+        ></div>
+
+
+        <div
+            class="favorite-empty"
+            id="favoriteEmpty"
+        >
+
+            <div class="empty-icon">
+                <i class="fa-regular fa-heart"></i>
+            </div>
+
+            <h3>Hali sevimli avtomobil yo'q</h3>
+
+            <p>
+                Sizga yoqqan mashinalarda ❤️ tugmasini bosing.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= WHY US ================= -->
+
+<section class="section why-section">
+
+    <div class="container">
+
+        <div class="section-heading centered">
+
+            <span class="eyebrow">
+                NIMA UCHUN CARZONE?
+            </span>
 
             <h2>
-                Premium mahsulotlarga
-                <strong>30% gacha chegirma</strong>
+                Avtomobil tanlash osonroq
             </h2>
 
             <p>
-                Aksiya cheklangan miqdorda.
+                Kerakli avtomobilni tez va qulay topish uchun
+                barcha imkoniyatlar bir joyda.
             </p>
 
-            <button class="primary-btn" onclick="scrollToProducts()">
-                Aksiyani ko‘rish →
-            </button>
-
         </div>
 
-        <div class="promo-icon">
-            🎁
+
+        <div class="why-grid">
+
+            <div class="why-card">
+
+                <div class="why-icon">
+                    <i class="fa-solid fa-shield-halved"></i>
+                </div>
+
+                <h3>Ishonchli</h3>
+
+                <p>
+                    Avtomobillar haqida batafsil ma'lumot
+                    va asosiy texnik ko'rsatkichlar.
+                </p>
+
+            </div>
+
+
+            <div class="why-card">
+
+                <div class="why-icon">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+
+                <h3>Tez qidiruv</h3>
+
+                <p>
+                    Brend, kategoriya, narx va model bo'yicha
+                    avtomobilni tez toping.
+                </p>
+
+            </div>
+
+
+            <div class="why-card">
+
+                <div class="why-icon">
+                    <i class="fa-solid fa-heart"></i>
+                </div>
+
+                <h3>Sevimlilar</h3>
+
+                <p>
+                    O'zingiz yoqtirgan avtomobillarni
+                    alohida saqlab boring.
+                </p>
+
+            </div>
+
+
+            <div class="why-card">
+
+                <div class="why-icon">
+                    <i class="fa-solid fa-mobile-screen-button"></i>
+                </div>
+
+                <h3>Responsive</h3>
+
+                <p>
+                    Telefon, planshet va kompyuterda
+                    qulay ishlaydi.
+                </p>
+
+            </div>
+
         </div>
 
     </div>
@@ -318,291 +650,400 @@
 </section>
 
 
-<!-- ================= ADVANTAGES ================= -->
+<!-- ================= ABOUT ================= -->
 
-<section class="advantages" id="advantages">
+<section class="section about-section" id="about">
 
-    <div class="container">
+    <div class="container about-grid">
 
-        <div class="section-head center">
+        <div class="about-content">
 
-            <div>
-                <span class="section-label">NOVA SHOP</span>
-                <h2>Nega biz?</h2>
+            <span class="eyebrow">
+                CARZONE HAQIDA
+            </span>
+
+            <h2>
+                Avtomobil tanlashning
+                zamonaviy usuli
+            </h2>
+
+            <p>
+                CARZONE — avtomobillarni qidirish, ko'rish,
+                taqqoslash va sevimlilarga saqlash uchun
+                yaratilgan zamonaviy frontend platforma.
+            </p>
+
+            <div class="about-list">
+
+                <div>
+                    <i class="fa-solid fa-check"></i>
+                    96+ zamonaviy avtomobil
+                </div>
+
+                <div>
+                    <i class="fa-solid fa-check"></i>
+                    30+ mashhur brend
+                </div>
+
+                <div>
+                    <i class="fa-solid fa-check"></i>
+                    Tezkor qidiruv va filter
+                </div>
+
+                <div>
+                    <i class="fa-solid fa-check"></i>
+                    Telefon va kompyuterga mos
+                </div>
+
             </div>
 
         </div>
 
-        <div class="advantages-grid">
 
-            <div class="advantage">
-                <div>🚚</div>
-                <h3>Tez yetkazish</h3>
-                <p>Buyurtmangizni imkon qadar tez yetkazamiz.</p>
+        <div class="about-card">
+
+            <div class="about-car-icon">
+                <i class="fa-solid fa-car"></i>
             </div>
 
-            <div class="advantage">
-                <div>🔒</div>
-                <h3>Xavfsiz xarid</h3>
-                <p>Ma'lumotlaringiz himoyalangan holda saqlanadi.</p>
-            </div>
+            <span>
+                PREMIUM
+            </span>
 
-            <div class="advantage">
-                <div>💳</div>
-                <h3>Qulay to‘lov</h3>
-                <p>Turli xil to‘lov usullaridan foydalaning.</p>
-            </div>
+            <strong>
+                CARZONE
+            </strong>
 
-            <div class="advantage">
-                <div>↩️</div>
-                <h3>Qaytarish</h3>
-                <p>Mahsulotda muammo bo‘lsa, qaytarish imkoniyati mavjud.</p>
-            </div>
+            <small>
+                Drive your future.
+            </small>
 
         </div>
 
     </div>
 
 </section>
+
+</main>
 
 
 <!-- ================= FOOTER ================= -->
 
-<footer>
+<footer class="footer">
 
     <div class="container footer-grid">
 
-        <div>
+        <div class="footer-brand">
 
-            <a class="logo footer-logo">
-                <span class="logo-icon">N</span>
-                <span>Nova<span>Shop</span></span>
+            <a href="#home" class="logo">
+
+                <span class="logo-icon">
+                    <i class="fa-solid fa-car-side"></i>
+                </span>
+
+                <span>
+                    <strong>CAR</strong>ZONE
+                </span>
+
             </a>
 
             <p>
-                Zamonaviy mahsulotlar va qulay xarid
-                tajribasi bir joyda.
+                Zamonaviy avtomobil savdosi platformasi.
             </p>
 
+            <div class="socials">
+
+                <a href="#" aria-label="Telegram">
+                    <i class="fa-brands fa-telegram"></i>
+                </a>
+
+                <a href="#" aria-label="Instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+
+                <a href="#" aria-label="YouTube">
+                    <i class="fa-brands fa-youtube"></i>
+                </a>
+
+            </div>
+
         </div>
 
-        <div>
-            <h4>Do‘kon</h4>
-            <a href="#products">Mahsulotlar</a>
+
+        <div class="footer-column">
+
+            <h4>Platforma</h4>
+
+            <a href="#cars">Avtomobillar</a>
             <a href="#categories">Kategoriyalar</a>
-            <a href="#">Chegirmalar</a>
+            <a href="#favorites">Sevimlilar</a>
+            <a href="#about">Biz haqimizda</a>
+
         </div>
 
-        <div>
-            <h4>Yordam</h4>
-            <a href="#">Yetkazib berish</a>
-            <a href="#">To‘lov</a>
-            <a href="#">Qaytarish</a>
+
+        <div class="footer-column">
+
+            <h4>Kategoriyalar</h4>
+
+            <a href="#cars" data-footer-category="Luxury">
+                Luxury
+            </a>
+
+            <a href="#cars" data-footer-category="Sport">
+                Sport
+            </a>
+
+            <a href="#cars" data-footer-category="SUV">
+                SUV
+            </a>
+
+            <a href="#cars" data-footer-category="Sedan">
+                Sedan
+            </a>
+
         </div>
 
-        <div>
+
+        <div class="footer-column">
+
             <h4>Aloqa</h4>
-            <a href="#">Telegram</a>
-            <a href="#">Instagram</a>
-            <a href="#">support@novashop.uz</a>
+
+            <a href="tel:+998901234567">
+                <i class="fa-solid fa-phone"></i>
+                +998 90 123 45 67
+            </a>
+
+            <a href="mailto:info@carzone.uz">
+                <i class="fa-solid fa-envelope"></i>
+                info@carzone.uz
+            </a>
+
+            <span>
+                <i class="fa-solid fa-location-dot"></i>
+                Toshkent, O'zbekiston
+            </span>
+
         </div>
 
     </div>
 
-    <div class="copyright">
-        © 2026 NovaShop. Barcha huquqlar himoyalangan.
+
+    <div class="footer-bottom">
+
+        <div class="container">
+
+            <span>
+                © 2026 CARZONE. Barcha huquqlar himoyalangan.
+            </span>
+
+            <span>
+                Frontend Demo
+            </span>
+
+        </div>
+
     </div>
 
 </footer>
 
 
-<!-- ================= PRODUCT MODAL ================= -->
+<!-- ================= CAR MODAL ================= -->
 
-<div class="modal" id="productModal">
+<div
+    class="modal"
+    id="carModal"
+    aria-hidden="true"
+>
 
-    <div class="modal-content product-detail">
+    <div class="modal-backdrop" data-close="carModal"></div>
 
-        <button class="modal-close" onclick="closeModal('productModal')">✕</button>
+    <div class="modal-box car-modal-box">
 
-        <div id="productDetail"></div>
+        <button
+            class="modal-close"
+            data-close="carModal"
+            type="button"
+        >
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <div id="carModalBody"></div>
 
     </div>
 
 </div>
 
 
-<!-- ================= CART MODAL ================= -->
+<!-- ================= SELL MODAL ================= -->
 
-<div class="modal" id="cartModal">
+<div
+    class="modal"
+    id="sellModal"
+    aria-hidden="true"
+>
 
-    <div class="modal-content cart-modal">
+    <div class="modal-backdrop" data-close="sellModal"></div>
 
-        <button class="modal-close" onclick="closeModal('cartModal')">✕</button>
+    <div class="modal-box">
 
-        <h2>🛒 Savatingiz</h2>
+        <button
+            class="modal-close"
+            data-close="sellModal"
+            type="button"
+        >
+            <i class="fa-solid fa-xmark"></i>
+        </button>
 
-        <div id="cartItems"></div>
+        <div class="modal-header">
 
-        <div class="cart-bottom">
+            <span class="modal-icon">
+                <i class="fa-solid fa-car"></i>
+            </span>
 
             <div>
-                <span>Jami:</span>
-                <strong id="cartTotal">0 so'm</strong>
+                <h2>Mashina sotish</h2>
+                <p>
+                    Avtomobilingiz haqida ma'lumot kiriting.
+                </p>
             </div>
-
-            <button class="primary-btn full" onclick="checkout()">
-                Buyurtma berish →
-            </button>
 
         </div>
 
-    </div>
 
-</div>
+        <form id="sellForm">
+
+            <div class="form-grid">
+
+                <div class="form-group">
+
+                    <label for="sellerName">
+                        Ismingiz
+                    </label>
+
+                    <input
+                        id="sellerName"
+                        name="sellerName"
+                        type="text"
+                        placeholder="Ismingiz"
+                        required
+                    >
+
+                </div>
 
 
-<!-- ================= FAVORITES ================= -->
+                <div class="form-group">
 
-<div class="modal" id="favoritesModal">
+                    <label for="sellerPhone">
+                        Telefon
+                    </label>
 
-    <div class="modal-content cart-modal">
+                    <input
+                        id="sellerPhone"
+                        name="sellerPhone"
+                        type="tel"
+                        placeholder="+998 90 123 45 67"
+                        required
+                    >
 
-        <button class="modal-close" onclick="closeModal('favoritesModal')">✕</button>
-
-        <h2>❤️ Sevimlilar</h2>
-
-        <div id="favoriteItems"></div>
-
-    </div>
-
-</div>
+                </div>
 
 
-<!-- ================= AUTH ================= -->
+                <div class="form-group">
 
-<div class="modal" id="authModal">
+                    <label for="sellBrand">
+                        Brend
+                    </label>
 
-    <div class="modal-content auth-modal">
+                    <input
+                        id="sellBrand"
+                        name="sellBrand"
+                        type="text"
+                        placeholder="BMW"
+                        required
+                    >
 
-        <button class="modal-close" onclick="closeModal('authModal')">✕</button>
+                </div>
 
-        <div class="auth-icon">👤</div>
 
-        <h2 id="authTitle">Hisobingizga kiring</h2>
+                <div class="form-group">
 
-        <p id="authDescription">
-            Xarid qilishni davom ettirish uchun kiring.
-        </p>
+                    <label for="sellModel">
+                        Model
+                    </label>
 
-        <form id="authForm">
+                    <input
+                        id="sellModel"
+                        name="sellModel"
+                        type="text"
+                        placeholder="M5 Competition"
+                        required
+                    >
 
-            <div class="input-group">
+                </div>
 
-                <label>Ism</label>
 
-                <input
-                    type="text"
-                    id="authName"
-                    placeholder="Ismingiz"
-                    required
-                >
+                <div class="form-group">
+
+                    <label for="sellYear">
+                        Yili
+                    </label>
+
+                    <input
+                        id="sellYear"
+                        name="sellYear"
+                        type="number"
+                        min="1950"
+                        max="2026"
+                        placeholder="2024"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="sellPrice">
+                        Narxi ($)
+                    </label>
+
+                    <input
+                        id="sellPrice"
+                        name="sellPrice"
+                        type="number"
+                        min="1"
+                        placeholder="55000"
+                        required
+                    >
+
+                </div>
 
             </div>
 
-            <div class="input-group">
 
-                <label>Email</label>
+            <div class="form-group">
 
-                <input
-                    type="email"
-                    id="authEmail"
-                    placeholder="example@gmail.com"
-                    required
-                >
+                <label for="sellDescription">
+                    Qo'shimcha ma'lumot
+                </label>
 
-            </div>
-
-            <div class="input-group">
-
-                <label>Parol</label>
-
-                <input
-                    type="password"
-                    id="authPassword"
-                    placeholder="••••••••"
-                    required
-                >
+                <textarea
+                    id="sellDescription"
+                    name="sellDescription"
+                    rows="4"
+                    placeholder="Avtomobil holati, probegi va boshqalar..."
+                ></textarea>
 
             </div>
 
-            <button class="primary-btn full">
-                Davom etish →
-            </button>
 
-        </form>
-
-        <button class="switch-auth" onclick="switchAuth()">
-            Hisobingiz yo‘qmi? Ro‘yxatdan o‘ting
-        </button>
-
-    </div>
-
-</div>
-
-
-<!-- ================= CHECKOUT ================= -->
-
-<div class="modal" id="checkoutModal">
-
-    <div class="modal-content checkout-modal">
-
-        <button class="modal-close" onclick="closeModal('checkoutModal')">✕</button>
-
-        <div class="success-icon">✓</div>
-
-        <h2>Buyurtma berish</h2>
-
-        <p>
-            Yetkazib berish ma'lumotlarini kiriting.
-        </p>
-
-        <form id="checkoutForm">
-
-            <input
-                type="text"
-                id="orderName"
-                placeholder="Ismingiz"
-                required
+            <button
+                class="primary-btn form-submit"
+                type="submit"
             >
-
-            <input
-                type="tel"
-                id="orderPhone"
-                placeholder="+998 90 123 45 67"
-                required
-            >
-
-            <input
-                type="text"
-                id="orderAddress"
-                placeholder="Yetkazib berish manzili"
-                required
-            >
-
-            <select id="paymentMethod">
-
-                <option value="cash">
-                    💵 Naqd pul
-                </option>
-
-                <option value="card">
-                    💳 Karta
-                </option>
-
-            </select>
-
-            <button class="primary-btn full">
-                Buyurtmani tasdiqlash ✓
+                <i class="fa-solid fa-paper-plane"></i>
+                E'lon yuborish
             </button>
 
         </form>
@@ -614,9 +1055,29 @@
 
 <!-- ================= TOAST ================= -->
 
-<div class="toast" id="toast">
-    <span id="toastIcon">✓</span>
-    <span id="toastText">Tayyor</span>
+<div
+    class="toast"
+    id="toast"
+>
+
+    <div class="toast-icon">
+        <i class="fa-solid fa-check"></i>
+    </div>
+
+    <div>
+        <strong id="toastTitle">
+            Tayyor
+        </strong>
+
+        <p id="toastMessage">
+            Amal bajarildi.
+        </p>
+    </div>
+
+    <button id="toastClose" type="button">
+        <i class="fa-solid fa-xmark"></i>
+    </button>
+
 </div>
 
 
