@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopUZ — Online Do‘kon</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+    <div class="container nav">
+
+        <a href="#" class="logo" onclick="showHome()">
+            <span>🛒</span> Shop<span>UZ</span>
+        </a>
+
+        <nav class="desktop-nav">
+            <a href="#home">Bosh sahifa</a>
+            <a href="#products">Mahsulotlar</a>
+            <a href="#categories">Kategoriyalar</a>
+        </nav>
+
+        <div class="nav-actions">
+            <button class="icon-btn search-btn" onclick="focusSearch()">🔍</button>
+
+            <button class="icon-btn cart-btn" onclick="openCart()">
+                🛒
+                <span id="cartCount">0</span>
+            </button>
+
+            <button class="login-btn" onclick="openAuth()">
+                👤 Kirish
+            </button>
+
+            <button class="menu-btn" onclick="toggleMenu()">☰</button>
+        </div>
+    </div>
+
+    <div id="mobileMenu" class="mobile-menu">
+        <a href="#home" onclick="closeMenu()">Bosh sahifa</a>
+        <a href="#products" onclick="closeMenu()">Mahsulotlar</a>
+        <a href="#categories" onclick="closeMenu()">Kategoriyalar</a>
+        <button onclick="openAuth(); closeMenu()">👤 Kirish</button>
+    </div>
+</header>
+
+<main>
+
+<section id="home" class="hero">
+    <div class="container hero-content">
+
+        <div class="hero-text">
+            <span class="badge">🔥 Yangi kolleksiya</span>
+
+            <h1>
+                O‘zingizga kerakli
+                <span>hamma narsa</span>
+                bir joyda
+            </h1>
+
+            <p>
+                Zamonaviy mahsulotlar, qulay narxlar va tez yetkazib berish.
+                ShopUZ bilan xarid qilish yanada oson.
+            </p>
+
+            <div class="hero-buttons">
+                <button class="primary-btn" onclick="scrollToProducts()">
+                    Xarid qilish →
+                </button>
+
+                <button class="secondary-btn" onclick="scrollToCategories()">
+                    Kategoriyalar
+                </button>
+            </div>
+
+            <div class="hero-stats">
+                <div>
+                    <strong>10K+</strong>
+                    <span>Mahsulot</span>
+                </div>
+
+                <div>
+                    <strong>50K+</strong>
+                    <span>Mijoz</span>
+                </div>
+
+                <div>
+                    <strong>4.9</strong>
+                    <span>Reyting</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-image">
+            <div class="floating-card card-one">
+                🚚
+                <div>
+                    <b>Tez yetkazish</b>
+                    <small>24 soat ichida</small>
+                </div>
+            </div>
+
+            <div class="product-showcase">
+                <div class="circle-bg"></div>
+                <div class="showcase-emoji">🎧</div>
+            </div>
+
+            <div class="floating-card card-two">
+                ⭐
+                <div>
+                    <b>4.9 / 5</b>
+                    <small>10K+ sharh</small>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+<section id="categories" class="categories-section">
+    <div class="container">
+
+        <div class="section-head">
+            <div>
+                <span class="section-label">Kategoriyalar</span>
+                <h2>Nimani izlayapsiz?</h2>
+            </div>
+        </div>
+
+        <div class="categories">
+
+            <button class="category active" data-category="all">
+                <span>✨</span>
+                <b>Barchasi</b>
+            </button>
+
+            <button class="category" data-category="electronics">
+                <span>💻</span>
+                <b>Elektronika</b>
+            </button>
+
+            <button class="category" data-category="fashion">
+                <span>👕</span>
+                <b>Kiyimlar</b>
+            </button>
+
+            <button class="category" data-category="home">
+                <span>🏠</span>
+                <b>Uy uchun</b>
+            </button>
+
+            <button class="category" data-category="sport">
+                <span>⚽</span>
+                <b>Sport</b>
+            </button>
+
+            <button class="category" data-category="accessories">
+                <span>⌚</span>
+                <b>Aksessuarlar</b>
+            </button>
+
+        </div>
+    </div>
+</section>
+
+
+<section id="products" class="products-section">
+    <div class="container">
+
+        <div class="section-head product-head">
+            <div>
+                <span class="section-label">Mahsulotlar</span>
+                <h2>Mashhur mahsulotlar</h2>
+            </div>
+
+            <div class="search-box" id="searchBox">
+                <span>🔍</span>
+                <input
+                    id="searchInput"
+                    type="text"
+                    placeholder="Mahsulot qidirish..."
+                >
+            </div>
+        </div>
+
+        <div id="productsGrid" class="products-grid"></div>
+
+        <div id="noProducts" class="no-products">
+            <div>🔎</div>
+            <h3>Mahsulot topilmadi</h3>
+            <p>Boshqa nom bilan qidirib ko‘ring.</p>
+        </div>
+
+    </div>
+</section>
+
+
+<section class="advantages">
+    <div class="container advantages-grid">
+
+        <div class="advantage">
+            <span>🚚</span>
+            <div>
+                <h3>Tez yetkazib berish</h3>
+                <p>Buyurtmangizni tez yetkazamiz.</p>
+            </div>
+        </div>
+
+        <div class="advantage">
+            <span>🔒</span>
+            <div>
+                <h3>Xavfsiz to‘lov</h3>
+                <p>To‘lovlaringiz himoyalangan.</p>
+            </div>
+        </div>
+
+        <div class="advantage">
+            <span>↩️</span>
+            <div>
+                <h3>Oson qaytarish</h3>
+                <p>14 kun ichida qaytarishingiz mumkin.</p>
+            </div>
+        </div>
+
+        <div class="advantage">
+            <span>💬</span>
+            <div>
+                <h3>24/7 yordam</h3>
+                <p>Har doim yordam berishga tayyormiz.</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+</main>
+
+
+<footer class="footer">
+    <div class="container footer-grid">
+
+        <div>
+            <a href="#" class="logo">
+                🛒 Shop<span>UZ</span>
+            </a>
+            <p>
+                Siz uchun qulay va zamonaviy online do‘kon.
+            </p>
+        </div>
+
+        <div>
+            <h3>Do‘kon</h3>
+            <a href="#products">Mahsulotlar</a>
+            <a href="#categories">Kategoriyalar</a>
+            <a href="#">Chegirmalar</a>
+        </div>
+
+        <div>
+            <h3>Yordam</h3>
+            <a href="#">Yetkazib berish</a>
+            <a href="#">To‘lov</a>
+            <a href="#">Qaytarish</a>
+        </div>
+
+        <div>
+            <h3>Aloqa</h3>
+            <a href="tel:+998901234567">+998 90 123 45 67</a>
+            <a href="mailto:info@shopuz.uz">info@shopuz.uz</a>
+        </div>
+
+    </div>
+
+    <div class="copyright">
+        © 2026 ShopUZ. Barcha huquqlar himoyalangan.
+    </div>
+</footer>
+
+
+<!-- PRODUCT MODAL -->
+
+<div id="productModal" class="modal">
+    <div class="modal-content product-modal-content">
+
+        <button class="close-btn" onclick="closeProductModal()">×</button>
+
+        <div id="productModalBody"></div>
+
+    </div>
+</div>
+
+
+<!-- CART -->
+
+<div id="cartModal" class="modal">
+    <div class="modal-content cart-modal">
+
+        <button class="close-btn" onclick="closeCart()">×</button>
+
+        <div class="modal-title">
+            <h2>🛒 Savatingiz</h2>
+            <span id="cartItemsCount">0 ta mahsulot</span>
+        </div>
+
+        <div id="cartItems"></div>
+
+        <div id="emptyCart" class="empty-cart">
+            <div>🛒</div>
+            <h3>Savat bo‘sh</h3>
+            <p>Mahsulotlarni savatga qo‘shing.</p>
+        </div>
+
+        <div id="cartFooter" class="cart-footer">
+
+            <div class="total">
+                <span>Jami:</span>
+                <strong id="cartTotal">0 so‘m</strong>
+            </div>
+
+            <button class="checkout-btn" onclick="checkout()">
+                Buyurtma berish →
+            </button>
+
+        </div>
+
+    </div>
+</div>
+
+
+<!-- AUTH -->
+
+<div id="authModal" class="modal">
+    <div class="modal-content auth-modal">
+
+        <button class="close-btn" onclick="closeAuth()">×</button>
+
+        <div class="auth-logo">🛒</div>
+
+        <div class="auth-title">
+            <h2 id="authTitle">Xush kelibsiz!</h2>
+            <p id="authSubtitle">
+                Hisobingizga kirish uchun ma’lumotlarni kiriting.
+            </p>
+        </div>
+
+        <form id="authForm">
+
+            <div id="nameGroup" class="form-group hidden">
+                <label>Ismingiz</label>
+                <input id="nameInput" type="text" placeholder="Ismingiz">
+            </div>
+
+            <div class="form-group">
+                <label>Email</label>
+                <input id="emailInput" type="email" placeholder="example@gmail.com" required>
+            </div>
+
+            <div class="form-group">
+                <label>Parol</label>
+                <input id="passwordInput" type="password" placeholder="••••••••" required>
+            </div>
+
+            <button class="primary-btn auth-submit" type="submit">
+                Kirish
+            </button>
+
+        </form>
+
+        <div class="auth-switch">
+            <span id="authSwitchText">Hisobingiz yo‘qmi?</span>
+            <button onclick="toggleAuthMode()" id="authSwitchBtn">
+                Ro‘yxatdan o‘tish
+            </button>
+        </div>
+
+    </div>
+</div>
+
+
+<!-- TOAST -->
+
+<div id="toast" class="toast">
+    <span id="toastIcon">✓</span>
+    <span id="toastText">Mahsulot savatga qo‘shildi</span>
+</div>
+
+
+<script src="script.js"></script>
+</body>
+</html>
