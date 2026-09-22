@@ -3,68 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ShopUZ — Online Do‘kon</title>
+
+    <title>NovaShop — Zamonaviy Online Do‘kon</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
+<!-- ================= HEADER ================= -->
+
 <header class="header">
+
     <div class="container nav">
 
-        <a href="#" class="logo" onclick="showHome()">
-            <span>🛒</span> Shop<span>UZ</span>
+        <a href="#" class="logo" onclick="goHome()">
+            <span class="logo-icon">N</span>
+            <span>Nova<span>Shop</span></span>
         </a>
 
         <nav class="desktop-nav">
-            <a href="#home">Bosh sahifa</a>
+            <a href="#" onclick="goHome()">Bosh sahifa</a>
             <a href="#products">Mahsulotlar</a>
             <a href="#categories">Kategoriyalar</a>
+            <a href="#advantages">Afzalliklar</a>
         </nav>
 
         <div class="nav-actions">
-            <button class="icon-btn search-btn" onclick="focusSearch()">🔍</button>
 
-            <button class="icon-btn cart-btn" onclick="openCart()">
+            <button class="icon-btn" onclick="toggleTheme()" title="Rejim">
+                <span id="themeIcon">🌙</span>
+            </button>
+
+            <button class="icon-btn" onclick="openFavorites()">
+                ❤️
+                <span class="count" id="favoriteCount">0</span>
+            </button>
+
+            <button class="icon-btn" onclick="openCart()">
                 🛒
-                <span id="cartCount">0</span>
+                <span class="count" id="cartCount">0</span>
             </button>
 
             <button class="login-btn" onclick="openAuth()">
                 👤 Kirish
             </button>
 
-            <button class="menu-btn" onclick="toggleMenu()">☰</button>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                ☰
+            </button>
+
         </div>
+
     </div>
 
-    <div id="mobileMenu" class="mobile-menu">
-        <a href="#home" onclick="closeMenu()">Bosh sahifa</a>
-        <a href="#products" onclick="closeMenu()">Mahsulotlar</a>
-        <a href="#categories" onclick="closeMenu()">Kategoriyalar</a>
-        <button onclick="openAuth(); closeMenu()">👤 Kirish</button>
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#" onclick="goHome()">Bosh sahifa</a>
+        <a href="#products" onclick="closeMobileMenu()">Mahsulotlar</a>
+        <a href="#categories" onclick="closeMobileMenu()">Kategoriyalar</a>
+        <a href="#advantages" onclick="closeMobileMenu()">Afzalliklar</a>
+        <button onclick="openAuth()">👤 Kirish</button>
     </div>
+
 </header>
 
-<main>
 
-<section id="home" class="hero">
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
     <div class="container hero-content">
 
         <div class="hero-text">
-            <span class="badge">🔥 Yangi kolleksiya</span>
+
+            <div class="badge">
+                ✨ Yangi kolleksiya
+            </div>
 
             <h1>
-                O‘zingizga kerakli
-                <span>hamma narsa</span>
-                bir joyda
+                Zamonaviy hayot uchun
+                <span>zamonaviy mahsulotlar.</span>
             </h1>
 
             <p>
-                Zamonaviy mahsulotlar, qulay narxlar va tez yetkazib berish.
-                ShopUZ bilan xarid qilish yanada oson.
+                Texnologiya, moda, uy jihozlari va kundalik hayot
+                uchun kerakli mahsulotlarni bir joydan toping.
             </p>
 
             <div class="hero-buttons">
+
                 <button class="primary-btn" onclick="scrollToProducts()">
                     Xarid qilish →
                 </button>
@@ -72,320 +103,524 @@
                 <button class="secondary-btn" onclick="scrollToCategories()">
                     Kategoriyalar
                 </button>
+
             </div>
 
             <div class="hero-stats">
+
                 <div>
                     <strong>10K+</strong>
-                    <span>Mahsulot</span>
+                    <span>Mijozlar</span>
                 </div>
 
                 <div>
-                    <strong>50K+</strong>
-                    <span>Mijoz</span>
+                    <strong>500+</strong>
+                    <span>Mahsulot</span>
                 </div>
 
                 <div>
                     <strong>4.9</strong>
                     <span>Reyting</span>
                 </div>
+
             </div>
+
         </div>
 
-        <div class="hero-image">
-            <div class="floating-card card-one">
-                🚚
-                <div>
-                    <b>Tez yetkazish</b>
-                    <small>24 soat ichida</small>
+
+        <div class="hero-visual">
+
+            <div class="hero-card main-product">
+
+                <div class="discount">-20%</div>
+
+                <img
+                    src="https://images.unsplash.com/photo-1590658268037-6bf12165a8df?auto=format&fit=crop&w=900&q=85"
+                    alt="AirPods"
+                >
+
+                <div class="floating-info">
+                    <span>Premium audio</span>
+                    <strong>AirPods Pro</strong>
+                    <b>1 899 000 so'm</b>
                 </div>
+
             </div>
 
-            <div class="product-showcase">
-                <div class="circle-bg"></div>
-                <div class="showcase-emoji">🎧</div>
+            <div class="floating floating-one">
+                ⭐ 4.9
             </div>
 
-            <div class="floating-card card-two">
-                ⭐
-                <div>
-                    <b>4.9 / 5</b>
-                    <small>10K+ sharh</small>
-                </div>
+            <div class="floating floating-two">
+                🚚 Tez yetkazish
             </div>
+
         </div>
 
     </div>
+
 </section>
 
 
-<section id="categories" class="categories-section">
+<!-- ================= SEARCH ================= -->
+
+<section class="search-section">
+
+    <div class="container">
+
+        <div class="search-box">
+
+            <span>🔎</span>
+
+            <input
+                id="searchInput"
+                type="text"
+                placeholder="Mahsulot qidiring..."
+                oninput="searchProducts()"
+            >
+
+            <button onclick="clearSearch()">✕</button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CATEGORIES ================= -->
+
+<section class="categories-section" id="categories">
+
     <div class="container">
 
         <div class="section-head">
+
             <div>
-                <span class="section-label">Kategoriyalar</span>
-                <h2>Nimani izlayapsiz?</h2>
+                <span class="section-label">KO‘RIB CHIQING</span>
+                <h2>Kategoriyalar</h2>
             </div>
+
         </div>
 
         <div class="categories">
 
-            <button class="category active" data-category="all">
+            <button class="category active" data-category="all" onclick="filterCategory('all', this)">
                 <span>✨</span>
-                <b>Barchasi</b>
+                <div>
+                    <strong>Barchasi</strong>
+                    <small>Barcha mahsulotlar</small>
+                </div>
             </button>
 
-            <button class="category" data-category="electronics">
+            <button class="category" data-category="electronics" onclick="filterCategory('electronics', this)">
                 <span>💻</span>
-                <b>Elektronika</b>
+                <div>
+                    <strong>Elektronika</strong>
+                    <small>Telefon & texnika</small>
+                </div>
             </button>
 
-            <button class="category" data-category="fashion">
+            <button class="category" data-category="fashion" onclick="filterCategory('fashion', this)">
                 <span>👕</span>
-                <b>Kiyimlar</b>
+                <div>
+                    <strong>Moda</strong>
+                    <small>Kiyim & aksessuar</small>
+                </div>
             </button>
 
-            <button class="category" data-category="home">
+            <button class="category" data-category="home" onclick="filterCategory('home', this)">
                 <span>🏠</span>
-                <b>Uy uchun</b>
+                <div>
+                    <strong>Uy</strong>
+                    <small>Uy uchun</small>
+                </div>
             </button>
 
-            <button class="category" data-category="sport">
+            <button class="category" data-category="sport" onclick="filterCategory('sport', this)">
                 <span>⚽</span>
-                <b>Sport</b>
-            </button>
-
-            <button class="category" data-category="accessories">
-                <span>⌚</span>
-                <b>Aksessuarlar</b>
+                <div>
+                    <strong>Sport</strong>
+                    <small>Sport mahsulotlari</small>
+                </div>
             </button>
 
         </div>
+
     </div>
+
 </section>
 
 
-<section id="products" class="products-section">
+<!-- ================= PRODUCTS ================= -->
+
+<section class="products-section" id="products">
+
     <div class="container">
 
-        <div class="section-head product-head">
+        <div class="section-head">
+
             <div>
-                <span class="section-label">Mahsulotlar</span>
-                <h2>Mashhur mahsulotlar</h2>
+                <span class="section-label">TOP MAHSULOTLAR</span>
+                <h2>Siz uchun tanladik</h2>
             </div>
 
-            <div class="search-box" id="searchBox">
-                <span>🔍</span>
-                <input
-                    id="searchInput"
-                    type="text"
-                    placeholder="Mahsulot qidirish..."
-                >
+            <div class="result-text" id="resultText">
+                12 ta mahsulot
             </div>
+
         </div>
 
-        <div id="productsGrid" class="products-grid"></div>
+        <div class="products-grid" id="productsGrid"></div>
 
-        <div id="noProducts" class="no-products">
+        <div class="empty-state" id="emptyState">
             <div>🔎</div>
             <h3>Mahsulot topilmadi</h3>
-            <p>Boshqa nom bilan qidirib ko‘ring.</p>
+            <p>Boshqa nom yoki kategoriya bilan qidirib ko‘ring.</p>
         </div>
 
     </div>
+
 </section>
 
 
-<section class="advantages">
-    <div class="container advantages-grid">
+<!-- ================= PROMO ================= -->
 
-        <div class="advantage">
-            <span>🚚</span>
-            <div>
-                <h3>Tez yetkazib berish</h3>
-                <p>Buyurtmangizni tez yetkazamiz.</p>
-            </div>
+<section class="promo">
+
+    <div class="container promo-box">
+
+        <div>
+
+            <span>🔥 BUGUNGI TAKLIF</span>
+
+            <h2>
+                Premium mahsulotlarga
+                <strong>30% gacha chegirma</strong>
+            </h2>
+
+            <p>
+                Aksiya cheklangan miqdorda.
+            </p>
+
+            <button class="primary-btn" onclick="scrollToProducts()">
+                Aksiyani ko‘rish →
+            </button>
+
         </div>
 
-        <div class="advantage">
-            <span>🔒</span>
-            <div>
-                <h3>Xavfsiz to‘lov</h3>
-                <p>To‘lovlaringiz himoyalangan.</p>
-            </div>
-        </div>
-
-        <div class="advantage">
-            <span>↩️</span>
-            <div>
-                <h3>Oson qaytarish</h3>
-                <p>14 kun ichida qaytarishingiz mumkin.</p>
-            </div>
-        </div>
-
-        <div class="advantage">
-            <span>💬</span>
-            <div>
-                <h3>24/7 yordam</h3>
-                <p>Har doim yordam berishga tayyormiz.</p>
-            </div>
+        <div class="promo-icon">
+            🎁
         </div>
 
     </div>
+
 </section>
 
-</main>
+
+<!-- ================= ADVANTAGES ================= -->
+
+<section class="advantages" id="advantages">
+
+    <div class="container">
+
+        <div class="section-head center">
+
+            <div>
+                <span class="section-label">NOVA SHOP</span>
+                <h2>Nega biz?</h2>
+            </div>
+
+        </div>
+
+        <div class="advantages-grid">
+
+            <div class="advantage">
+                <div>🚚</div>
+                <h3>Tez yetkazish</h3>
+                <p>Buyurtmangizni imkon qadar tez yetkazamiz.</p>
+            </div>
+
+            <div class="advantage">
+                <div>🔒</div>
+                <h3>Xavfsiz xarid</h3>
+                <p>Ma'lumotlaringiz himoyalangan holda saqlanadi.</p>
+            </div>
+
+            <div class="advantage">
+                <div>💳</div>
+                <h3>Qulay to‘lov</h3>
+                <p>Turli xil to‘lov usullaridan foydalaning.</p>
+            </div>
+
+            <div class="advantage">
+                <div>↩️</div>
+                <h3>Qaytarish</h3>
+                <p>Mahsulotda muammo bo‘lsa, qaytarish imkoniyati mavjud.</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
 
 
-<footer class="footer">
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
     <div class="container footer-grid">
 
         <div>
-            <a href="#" class="logo">
-                🛒 Shop<span>UZ</span>
+
+            <a class="logo footer-logo">
+                <span class="logo-icon">N</span>
+                <span>Nova<span>Shop</span></span>
             </a>
+
             <p>
-                Siz uchun qulay va zamonaviy online do‘kon.
+                Zamonaviy mahsulotlar va qulay xarid
+                tajribasi bir joyda.
             </p>
+
         </div>
 
         <div>
-            <h3>Do‘kon</h3>
+            <h4>Do‘kon</h4>
             <a href="#products">Mahsulotlar</a>
             <a href="#categories">Kategoriyalar</a>
             <a href="#">Chegirmalar</a>
         </div>
 
         <div>
-            <h3>Yordam</h3>
+            <h4>Yordam</h4>
             <a href="#">Yetkazib berish</a>
             <a href="#">To‘lov</a>
             <a href="#">Qaytarish</a>
         </div>
 
         <div>
-            <h3>Aloqa</h3>
-            <a href="tel:+998901234567">+998 90 123 45 67</a>
-            <a href="mailto:info@shopuz.uz">info@shopuz.uz</a>
+            <h4>Aloqa</h4>
+            <a href="#">Telegram</a>
+            <a href="#">Instagram</a>
+            <a href="#">support@novashop.uz</a>
         </div>
 
     </div>
 
     <div class="copyright">
-        © 2026 ShopUZ. Barcha huquqlar himoyalangan.
+        © 2026 NovaShop. Barcha huquqlar himoyalangan.
     </div>
+
 </footer>
 
 
-<!-- PRODUCT MODAL -->
+<!-- ================= PRODUCT MODAL ================= -->
 
-<div id="productModal" class="modal">
-    <div class="modal-content product-modal-content">
+<div class="modal" id="productModal">
 
-        <button class="close-btn" onclick="closeProductModal()">×</button>
+    <div class="modal-content product-detail">
 
-        <div id="productModalBody"></div>
+        <button class="modal-close" onclick="closeModal('productModal')">✕</button>
+
+        <div id="productDetail"></div>
 
     </div>
+
 </div>
 
 
-<!-- CART -->
+<!-- ================= CART MODAL ================= -->
 
-<div id="cartModal" class="modal">
+<div class="modal" id="cartModal">
+
     <div class="modal-content cart-modal">
 
-        <button class="close-btn" onclick="closeCart()">×</button>
+        <button class="modal-close" onclick="closeModal('cartModal')">✕</button>
 
-        <div class="modal-title">
-            <h2>🛒 Savatingiz</h2>
-            <span id="cartItemsCount">0 ta mahsulot</span>
-        </div>
+        <h2>🛒 Savatingiz</h2>
 
         <div id="cartItems"></div>
 
-        <div id="emptyCart" class="empty-cart">
-            <div>🛒</div>
-            <h3>Savat bo‘sh</h3>
-            <p>Mahsulotlarni savatga qo‘shing.</p>
-        </div>
+        <div class="cart-bottom">
 
-        <div id="cartFooter" class="cart-footer">
-
-            <div class="total">
+            <div>
                 <span>Jami:</span>
-                <strong id="cartTotal">0 so‘m</strong>
+                <strong id="cartTotal">0 so'm</strong>
             </div>
 
-            <button class="checkout-btn" onclick="checkout()">
+            <button class="primary-btn full" onclick="checkout()">
                 Buyurtma berish →
             </button>
 
         </div>
 
     </div>
+
 </div>
 
 
-<!-- AUTH -->
+<!-- ================= FAVORITES ================= -->
 
-<div id="authModal" class="modal">
+<div class="modal" id="favoritesModal">
+
+    <div class="modal-content cart-modal">
+
+        <button class="modal-close" onclick="closeModal('favoritesModal')">✕</button>
+
+        <h2>❤️ Sevimlilar</h2>
+
+        <div id="favoriteItems"></div>
+
+    </div>
+
+</div>
+
+
+<!-- ================= AUTH ================= -->
+
+<div class="modal" id="authModal">
+
     <div class="modal-content auth-modal">
 
-        <button class="close-btn" onclick="closeAuth()">×</button>
+        <button class="modal-close" onclick="closeModal('authModal')">✕</button>
 
-        <div class="auth-logo">🛒</div>
+        <div class="auth-icon">👤</div>
 
-        <div class="auth-title">
-            <h2 id="authTitle">Xush kelibsiz!</h2>
-            <p id="authSubtitle">
-                Hisobingizga kirish uchun ma’lumotlarni kiriting.
-            </p>
-        </div>
+        <h2 id="authTitle">Hisobingizga kiring</h2>
+
+        <p id="authDescription">
+            Xarid qilishni davom ettirish uchun kiring.
+        </p>
 
         <form id="authForm">
 
-            <div id="nameGroup" class="form-group hidden">
-                <label>Ismingiz</label>
-                <input id="nameInput" type="text" placeholder="Ismingiz">
+            <div class="input-group">
+
+                <label>Ism</label>
+
+                <input
+                    type="text"
+                    id="authName"
+                    placeholder="Ismingiz"
+                    required
+                >
+
             </div>
 
-            <div class="form-group">
+            <div class="input-group">
+
                 <label>Email</label>
-                <input id="emailInput" type="email" placeholder="example@gmail.com" required>
+
+                <input
+                    type="email"
+                    id="authEmail"
+                    placeholder="example@gmail.com"
+                    required
+                >
+
             </div>
 
-            <div class="form-group">
+            <div class="input-group">
+
                 <label>Parol</label>
-                <input id="passwordInput" type="password" placeholder="••••••••" required>
+
+                <input
+                    type="password"
+                    id="authPassword"
+                    placeholder="••••••••"
+                    required
+                >
+
             </div>
 
-            <button class="primary-btn auth-submit" type="submit">
-                Kirish
+            <button class="primary-btn full">
+                Davom etish →
             </button>
 
         </form>
 
-        <div class="auth-switch">
-            <span id="authSwitchText">Hisobingiz yo‘qmi?</span>
-            <button onclick="toggleAuthMode()" id="authSwitchBtn">
-                Ro‘yxatdan o‘tish
-            </button>
-        </div>
+        <button class="switch-auth" onclick="switchAuth()">
+            Hisobingiz yo‘qmi? Ro‘yxatdan o‘ting
+        </button>
 
     </div>
+
 </div>
 
 
-<!-- TOAST -->
+<!-- ================= CHECKOUT ================= -->
 
-<div id="toast" class="toast">
+<div class="modal" id="checkoutModal">
+
+    <div class="modal-content checkout-modal">
+
+        <button class="modal-close" onclick="closeModal('checkoutModal')">✕</button>
+
+        <div class="success-icon">✓</div>
+
+        <h2>Buyurtma berish</h2>
+
+        <p>
+            Yetkazib berish ma'lumotlarini kiriting.
+        </p>
+
+        <form id="checkoutForm">
+
+            <input
+                type="text"
+                id="orderName"
+                placeholder="Ismingiz"
+                required
+            >
+
+            <input
+                type="tel"
+                id="orderPhone"
+                placeholder="+998 90 123 45 67"
+                required
+            >
+
+            <input
+                type="text"
+                id="orderAddress"
+                placeholder="Yetkazib berish manzili"
+                required
+            >
+
+            <select id="paymentMethod">
+
+                <option value="cash">
+                    💵 Naqd pul
+                </option>
+
+                <option value="card">
+                    💳 Karta
+                </option>
+
+            </select>
+
+            <button class="primary-btn full">
+                Buyurtmani tasdiqlash ✓
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<!-- ================= TOAST ================= -->
+
+<div class="toast" id="toast">
     <span id="toastIcon">✓</span>
-    <span id="toastText">Mahsulot savatga qo‘shildi</span>
+    <span id="toastText">Tayyor</span>
 </div>
 
 
 <script src="script.js"></script>
+
 </body>
 </html>

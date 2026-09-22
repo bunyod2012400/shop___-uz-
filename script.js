@@ -1,11 +1,13 @@
-/* =========================================
-   SHOPUZ ONLINE STORE
-========================================= */
+/* ==========================================
+   NOVASHOP
+   COMPLETE FRONTEND JAVASCRIPT
+========================================== */
 
 
-/* PRODUCTS */
+/* ================= PRODUCTS ================= */
 
 const products = [
+
     {
         id: 1,
         name: "AirPods Pro 2",
@@ -15,9 +17,9 @@ const products = [
         oldPrice: 2199000,
         rating: 4.9,
         reviews: 328,
-        emoji: "🎧",
-        description:
-            "Yuqori sifatli ovoz, shovqinni faol kamaytirish va qulay dizayn bilan zamonaviy simsiz quloqchin."
+        badge: "-14%",
+        image: "https://images.unsplash.com/photo-1606220945770-b5b6c2c55bf1?auto=format&fit=crop&w=900&q=85",
+        description: "Yuqori sifatli ovoz, Active Noise Cancellation va uzoq batareya quvvatiga ega premium simsiz quloqchin."
     },
 
     {
@@ -28,10 +30,10 @@ const products = [
         price: 15990000,
         oldPrice: 16990000,
         rating: 4.9,
-        reviews: 142,
-        emoji: "💻",
-        description:
-            "Yengil va kuchli noutbuk. Kundalik ishlar, dasturlash va kreativ loyihalar uchun mos."
+        reviews: 215,
+        badge: "-6%",
+        image: "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=900&q=85",
+        description: "Yengil va kuchli MacBook Air. M3 chip, yuqori aniqlikdagi ekran va professional ishlash."
     },
 
     {
@@ -42,80 +44,80 @@ const products = [
         price: 13990000,
         oldPrice: 14990000,
         rating: 4.8,
-        reviews: 521,
-        emoji: "📱",
-        description:
-            "Premium dizayn, kuchli kamera va yuqori unumdorlikka ega zamonaviy smartfon."
+        reviews: 492,
+        badge: "-7%",
+        image: "https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?auto=format&fit=crop&w=900&q=85",
+        description: "Titan korpus, kuchli kamera va zamonaviy Pro darajadagi imkoniyatlarga ega smartfon."
     },
 
     {
         id: 4,
         name: "Smart Watch Ultra",
-        category: "accessories",
-        categoryName: "Aksessuarlar",
+        category: "electronics",
+        categoryName: "Elektronika",
         price: 899000,
         oldPrice: 1099000,
         rating: 4.7,
-        reviews: 189,
-        emoji: "⌚",
-        description:
-            "Sport, kundalik foydalanish va sog‘lom turmush tarzi uchun aqlli soat."
+        reviews: 182,
+        badge: "-18%",
+        image: "https://images.unsplash.com/photo-1544117519-31a4b719223d?auto=format&fit=crop&w=900&q=85",
+        description: "Sport, sog‘lom turmush va kundalik foydalanish uchun zamonaviy aqlli soat."
     },
 
     {
         id: 5,
         name: "Premium Hoodie",
         category: "fashion",
-        categoryName: "Kiyimlar",
+        categoryName: "Moda",
         price: 399000,
         oldPrice: 499000,
         rating: 4.8,
-        reviews: 97,
-        emoji: "🧥",
-        description:
-            "Yumshoq va qulay premium hoodie. Kundalik kiyish uchun zamonaviy model."
+        reviews: 145,
+        badge: "-20%",
+        image: "https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?auto=format&fit=crop&w=900&q=85",
+        description: "Yumshoq premium matodan tayyorlangan zamonaviy hoodie. Kundalik kiyinish uchun juda qulay."
     },
 
     {
         id: 6,
         name: "Classic Sneakers",
         category: "fashion",
-        categoryName: "Kiyimlar",
+        categoryName: "Moda",
         price: 649000,
         oldPrice: 799000,
-        rating: 4.9,
-        reviews: 243,
-        emoji: "👟",
-        description:
-            "Yengil va qulay krossovka. Kundalik yurish va sport uchun mos."
+        rating: 4.8,
+        reviews: 237,
+        badge: "-19%",
+        image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=900&q=85",
+        description: "Minimalistik dizayn va qulay taglikka ega zamonaviy krossovkalar."
     },
 
     {
         id: 7,
         name: "Minimal Lamp",
         category: "home",
-        categoryName: "Uy uchun",
+        categoryName: "Uy",
         price: 279000,
         oldPrice: 349000,
         rating: 4.6,
-        reviews: 78,
-        emoji: "💡",
-        description:
-            "Minimalistik dizayndagi stol chirog‘i. Ish stoli va yotoqxona uchun ajoyib tanlov."
+        reviews: 94,
+        badge: "-20%",
+        image: "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=900&q=85",
+        description: "Uy va ish stolingiz uchun minimalistik zamonaviy chiroq."
     },
 
     {
         id: 8,
         name: "Modern Chair",
         category: "home",
-        categoryName: "Uy uchun",
+        categoryName: "Uy",
         price: 899000,
         oldPrice: 999000,
         rating: 4.7,
-        reviews: 65,
-        emoji: "🪑",
-        description:
-            "Uy va ofis uchun zamonaviy, qulay va mustahkam kreslo."
+        reviews: 83,
+        badge: "-10%",
+        image: "https://images.unsplash.com/photo-1592078615290-033ee584e267?auto=format&fit=crop&w=900&q=85",
+        description: "Zamonaviy interyer uchun qulay va chiroyli dizayndagi kreslo."
     },
 
     {
@@ -126,10 +128,10 @@ const products = [
         price: 229000,
         oldPrice: 299000,
         rating: 4.8,
-        reviews: 120,
-        emoji: "⚽",
-        description:
-            "Professional darajadagi futbol to‘pi. Mashg‘ulot va o‘yinlar uchun."
+        reviews: 117,
+        badge: "-23%",
+        image: "https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=900&q=85",
+        description: "Mashg‘ulotlar va professional o‘yinlar uchun sifatli futbol to‘pi."
     },
 
     {
@@ -139,25 +141,25 @@ const products = [
         categoryName: "Elektronika",
         price: 599000,
         oldPrice: 699000,
-        rating: 4.8,
-        reviews: 311,
-        emoji: "⌨️",
-        description:
-            "Tezkor va qulay mexanik klaviatura. Gaming va dasturlash uchun mos."
+        rating: 4.9,
+        reviews: 306,
+        badge: "-14%",
+        image: "https://images.unsplash.com/photo-1587829741301-dc798b83add3?auto=format&fit=crop&w=900&q=85",
+        description: "Tezkor tugmalar, RGB yoritish va qulay mexanik dizaynga ega gaming klaviatura."
     },
 
     {
         id: 11,
         name: "Leather Backpack",
-        category: "accessories",
-        categoryName: "Aksessuarlar",
+        category: "fashion",
+        categoryName: "Moda",
         price: 459000,
         oldPrice: 559000,
         rating: 4.7,
-        reviews: 84,
-        emoji: "🎒",
-        description:
-            "Noutbuk va kundalik buyumlar uchun zamonaviy va mustahkam ryukzak."
+        reviews: 129,
+        badge: "-18%",
+        image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=900&q=85",
+        description: "Laptop va kundalik buyumlar uchun premium charm ryukzak."
     },
 
     {
@@ -168,192 +170,210 @@ const products = [
         price: 119000,
         oldPrice: 159000,
         rating: 4.6,
-        reviews: 53,
-        emoji: "🥤",
-        description:
-            "Sport va sayohat uchun qulay, yengil suv idishi."
+        reviews: 76,
+        badge: "-25%",
+        image: "https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&w=900&q=85",
+        description: "Sport va sayohat uchun yengil, mustahkam va zamonaviy suv idishi."
     }
+
 ];
 
 
-/* STATE */
+/* ================= STATE ================= */
 
-let cart = JSON.parse(localStorage.getItem("shopuz_cart")) || [];
+let cart = JSON.parse(localStorage.getItem("novashop_cart")) || [];
+
+let favorites =
+    JSON.parse(localStorage.getItem("novashop_favorites")) || [];
 
 let currentCategory = "all";
 
-let authMode = "login";
+let loginMode = false;
 
 
-/* DOM */
+/* ================= HELPERS ================= */
 
-const productsGrid = document.getElementById("productsGrid");
-const noProducts = document.getElementById("noProducts");
-const searchInput = document.getElementById("searchInput");
-const cartCount = document.getElementById("cartCount");
+function formatPrice(price) {
 
+    return new Intl.NumberFormat("uz-UZ").format(price) + " so'm";
 
-/* FORMAT PRICE */
-
-function formatPrice(number) {
-    return new Intl.NumberFormat("uz-UZ").format(number) + " so‘m";
 }
 
-
-/* SAVE CART */
 
 function saveCart() {
-    localStorage.setItem("shopuz_cart", JSON.stringify(cart));
+
+    localStorage.setItem(
+        "novashop_cart",
+        JSON.stringify(cart)
+    );
+
 }
 
 
-/* RENDER PRODUCTS */
+function saveFavorites() {
 
-function renderProducts() {
+    localStorage.setItem(
+        "novashop_favorites",
+        JSON.stringify(favorites)
+    );
 
-    const search = searchInput.value.toLowerCase().trim();
-
-    const filtered = products.filter(product => {
-
-        const categoryMatch =
-            currentCategory === "all" ||
-            product.category === currentCategory;
-
-        const searchMatch =
-            product.name.toLowerCase().includes(search) ||
-            product.categoryName.toLowerCase().includes(search);
-
-        return categoryMatch && searchMatch;
-    });
+}
 
 
-    productsGrid.innerHTML = "";
+/* ================= RENDER PRODUCTS ================= */
 
+function renderProducts(list = null) {
 
-    if (filtered.length === 0) {
-        noProducts.style.display = "block";
-        return;
+    const grid = document.getElementById("productsGrid");
+
+    const empty = document.getElementById("emptyState");
+
+    let data = list;
+
+    if (!data) {
+
+        data = products.filter(product => {
+
+            if (currentCategory === "all") {
+                return true;
+            }
+
+            return product.category === currentCategory;
+
+        });
+
     }
 
-    noProducts.style.display = "none";
+    grid.innerHTML = "";
+
+    document.getElementById("resultText").textContent =
+        `${data.length} ta mahsulot`;
+
+    if (data.length === 0) {
+
+        empty.style.display = "block";
+
+        return;
+
+    }
+
+    empty.style.display = "none";
 
 
-    filtered.forEach(product => {
+    data.forEach(product => {
 
-        const discount =
-            Math.round(
-                ((product.oldPrice - product.price) /
-                product.oldPrice) * 100
-            );
+        const isFavorite =
+            favorites.includes(product.id);
 
+        grid.innerHTML += `
 
-        const card = document.createElement("div");
+            <article class="product-card">
 
-        card.className = "product-card";
-
-
-        card.innerHTML = `
-            <div
-                class="product-image"
-                onclick="openProduct(${product.id})"
-            >
-
-                <span class="discount">
-                    -${discount}%
-                </span>
-
-                <button
-                    class="favorite"
-                    onclick="toggleFavorite(event, ${product.id})"
+                <div
+                    class="product-image"
+                    onclick="openProduct(${product.id})"
                 >
-                    ♡
-                </button>
 
-                <span class="emoji">
-                    ${product.emoji}
-                </span>
-            </div>
+                    <img
+                        src="${product.image}"
+                        alt="${product.name}"
+                    >
 
-            <div class="product-info">
-
-                <div class="product-category">
-                    ${product.categoryName}
-                </div>
-
-                <div class="product-name">
-                    ${product.name}
-                </div>
-
-                <div class="rating">
-                    ⭐ ${product.rating}
-                    <span style="color:#a1a1aa">
-                        (${product.reviews})
+                    <span class="product-badge">
+                        ${product.badge}
                     </span>
-                </div>
-
-                <div class="price-row">
-
-                    <div>
-                        <div class="price">
-                            ${formatPrice(product.price)}
-                        </div>
-
-                        <span class="old-price">
-                            ${formatPrice(product.oldPrice)}
-                        </span>
-                    </div>
 
                     <button
-                        class="add-cart"
-                        onclick="addToCart(${product.id})"
-                        title="Savatga qo‘shish"
+                        class="favorite ${isFavorite ? "active" : ""}"
+                        onclick="event.stopPropagation(); toggleFavorite(${product.id})"
                     >
-                        +
+                        ${isFavorite ? "♥" : "♡"}
                     </button>
 
                 </div>
 
-            </div>
+                <div class="product-info">
+
+                    <span class="product-category">
+                        ${product.categoryName}
+                    </span>
+
+                    <h3
+                        onclick="openProduct(${product.id})"
+                        style="cursor:pointer"
+                    >
+                        ${product.name}
+                    </h3>
+
+                    <div class="rating">
+                        ★ ${product.rating}
+                        <span>(${product.reviews})</span>
+                    </div>
+
+                    <div class="price-row">
+
+                        <div class="price">
+
+                            <strong>
+                                ${formatPrice(product.price)}
+                            </strong>
+
+                            <span class="old-price">
+                                ${formatPrice(product.oldPrice)}
+                            </span>
+
+                        </div>
+
+                        <button
+                            class="add-cart"
+                            onclick="addToCart(${product.id})"
+                        >
+                            +
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
         `;
 
-
-        productsGrid.appendChild(card);
     });
+
 }
 
 
-/* CATEGORY */
+/* ================= CATEGORY ================= */
 
-document.querySelectorAll(".category").forEach(button => {
+function filterCategory(category, button) {
 
-    button.addEventListener("click", () => {
+    currentCategory = category;
 
-        document
-            .querySelectorAll(".category")
-            .forEach(item => item.classList.remove("active"));
+    document.querySelectorAll(".category")
+        .forEach(item => item.classList.remove("active"));
 
-        button.classList.add("active");
+    button.classList.add("active");
 
-        currentCategory =
-            button.dataset.category;
+    const search =
+        document.getElementById("searchInput").value
+            .toLowerCase()
+            .trim();
 
-        renderProducts();
+    let data = products.filter(product => {
 
-        document
-            .getElementById("products")
-            .scrollIntoView({
-                behavior: "smooth"
-            });
+        const categoryMatch =
+            category === "all" ||
+            product.category === category;
+
+        const searchMatch =
+            product.name.toLowerCase().includes(search);
+
+        return categoryMatch && searchMatch;
+
     });
-});
 
-
-/* SEARCH */
-
-searchInput.addEventListener("input", renderProducts);
-
-
-function focusSearch() {
+    renderProducts(data);
 
     document
         .getElementById("products")
@@ -361,13 +381,50 @@ function focusSearch() {
             behavior: "smooth"
         });
 
-    setTimeout(() => {
-        searchInput.focus();
-    }, 500);
 }
 
 
-/* ADD TO CART */
+/* ================= SEARCH ================= */
+
+function searchProducts() {
+
+    const search =
+        document.getElementById("searchInput")
+            .value
+            .toLowerCase()
+            .trim();
+
+    const data = products.filter(product => {
+
+        const categoryMatch =
+            currentCategory === "all" ||
+            product.category === currentCategory;
+
+        return (
+            categoryMatch &&
+            (
+                product.name.toLowerCase().includes(search) ||
+                product.categoryName.toLowerCase().includes(search)
+            )
+        );
+
+    });
+
+    renderProducts(data);
+
+}
+
+
+function clearSearch() {
+
+    document.getElementById("searchInput").value = "";
+
+    searchProducts();
+
+}
+
+
+/* ================= CART ================= */
 
 function addToCart(id) {
 
@@ -375,45 +432,41 @@ function addToCart(id) {
         item => item.id === id
     );
 
-
     if (existing) {
+
         existing.quantity++;
+
     } else {
 
-        const product = products.find(
-            item => item.id === id
-        );
-
         cart.push({
-            id: product.id,
+            id: id,
             quantity: 1
         });
-    }
 
+    }
 
     saveCart();
 
     updateCartCount();
 
-    showToast("✓", "Mahsulot savatga qo‘shildi");
+    showToast("Mahsulot savatga qo‘shildi 🛒");
+
 }
 
-
-/* CART COUNT */
 
 function updateCartCount() {
 
-    const count = cart.reduce(
-        (total, item) =>
-            total + item.quantity,
-        0
-    );
+    const count =
+        cart.reduce(
+            (total, item) => total + item.quantity,
+            0
+        );
 
-    cartCount.textContent = count;
+    document.getElementById("cartCount")
+        .textContent = count;
+
 }
 
-
-/* OPEN CART */
 
 function openCart() {
 
@@ -423,152 +476,106 @@ function openCart() {
         .getElementById("cartModal")
         .classList.add("show");
 
-    document.body.style.overflow = "hidden";
 }
 
-
-/* CLOSE CART */
-
-function closeCart() {
-
-    document
-        .getElementById("cartModal")
-        .classList.remove("show");
-
-    document.body.style.overflow = "";
-}
-
-
-/* RENDER CART */
 
 function renderCart() {
 
-    const cartItems =
+    const container =
         document.getElementById("cartItems");
-
-    const emptyCart =
-        document.getElementById("emptyCart");
-
-    const cartFooter =
-        document.getElementById("cartFooter");
-
-    const cartItemsCount =
-        document.getElementById("cartItemsCount");
-
-
-    cartItems.innerHTML = "";
-
 
     if (cart.length === 0) {
 
-        emptyCart.style.display = "block";
-        cartFooter.style.display = "none";
+        container.innerHTML = `
+            <div class="empty-state" style="display:block;padding:40px 0">
+                <div>🛒</div>
+                <h3>Savat bo‘sh</h3>
+                <p>Mahsulot qo‘shing.</p>
+            </div>
+        `;
 
-        cartItemsCount.textContent =
-            "0 ta mahsulot";
+        document.getElementById("cartTotal")
+            .textContent = "0 so'm";
 
         return;
+
     }
 
 
-    emptyCart.style.display = "none";
-    cartFooter.style.display = "block";
-
-
     let total = 0;
-    let totalQuantity = 0;
+
+    container.innerHTML = "";
 
 
     cart.forEach(item => {
 
         const product =
-            products.find(
-                product => product.id === item.id
-            );
-
+            products.find(p => p.id === item.id);
 
         const itemTotal =
             product.price * item.quantity;
 
-
         total += itemTotal;
-        totalQuantity += item.quantity;
 
 
-        const div =
-            document.createElement("div");
+        container.innerHTML += `
 
-        div.className = "cart-item";
+            <div class="cart-item">
 
+                <img
+                    src="${product.image}"
+                    alt="${product.name}"
+                >
 
-        div.innerHTML = `
+                <div>
 
-            <div class="cart-item-image">
-                ${product.emoji}
-            </div>
+                    <h4>${product.name}</h4>
 
-            <div class="cart-item-info">
+                    <small>
+                        ${formatPrice(product.price)}
+                    </small>
 
-                <h4>
-                    ${product.name}
-                </h4>
+                    <div class="quantity">
 
-                <span>
-                    ${formatPrice(product.price)}
-                </span>
+                        <button
+                            onclick="changeQuantity(${product.id}, -1)"
+                        >
+                            −
+                        </button>
 
-                <div class="quantity">
+                        <strong>
+                            ${item.quantity}
+                        </strong>
 
-                    <button
-                        onclick="changeQuantity(${product.id}, -1)"
-                    >
-                        −
-                    </button>
+                        <button
+                            onclick="changeQuantity(${product.id}, 1)"
+                        >
+                            +
+                        </button>
 
-                    <strong>
-                        ${item.quantity}
-                    </strong>
-
-                    <button
-                        onclick="changeQuantity(${product.id}, 1)"
-                    >
-                        +
-                    </button>
+                    </div>
 
                 </div>
 
-            </div>
-
-            <div class="cart-item-right">
-
-                <strong>
-                    ${formatPrice(itemTotal)}
-                </strong>
-
                 <button
-                    class="remove-btn"
+                    class="remove"
                     onclick="removeFromCart(${product.id})"
                 >
-                    O‘chirish
+                    🗑
                 </button>
 
             </div>
+
         `;
 
-
-        cartItems.appendChild(div);
     });
 
 
-    cartItemsCount.textContent =
-        `${totalQuantity} ta mahsulot`;
+    document.getElementById("cartTotal")
+        .textContent = formatPrice(total);
 
-    document.getElementById("cartTotal").textContent =
-        formatPrice(total);
 }
 
-
-/* CHANGE QUANTITY */
 
 function changeQuantity(id, amount) {
 
@@ -577,35 +584,29 @@ function changeQuantity(id, amount) {
 
     if (!item) return;
 
-
     item.quantity += amount;
-
 
     if (item.quantity <= 0) {
 
-        cart =
-            cart.filter(
-                item => item.id !== id
-            );
-    }
+        cart = cart.filter(
+            item => item.id !== id
+        );
 
+    }
 
     saveCart();
 
     updateCartCount();
 
     renderCart();
+
 }
 
-
-/* REMOVE */
 
 function removeFromCart(id) {
 
     cart =
-        cart.filter(
-            item => item.id !== id
-        );
+        cart.filter(item => item.id !== id);
 
     saveCart();
 
@@ -613,73 +614,42 @@ function removeFromCart(id) {
 
     renderCart();
 
-    showToast("✓", "Mahsulot o‘chirildi");
+    showToast("Mahsulot savatdan olib tashlandi");
+
 }
 
 
-/* CHECKOUT */
-
-function checkout() {
-
-    if (cart.length === 0) {
-
-        showToast(
-            "!",
-            "Avval mahsulot qo‘shing"
-        );
-
-        return;
-    }
-
-
-    closeCart();
-
-    setTimeout(() => {
-
-        alert(
-            "🎉 Buyurtmangiz qabul qilindi!\n\n" +
-            "Tez orada siz bilan bog‘lanamiz."
-        );
-
-        cart = [];
-
-        saveCart();
-
-        updateCartCount();
-
-    }, 300);
-}
-
-
-/* PRODUCT MODAL */
+/* ================= PRODUCT DETAIL ================= */
 
 function openProduct(id) {
 
     const product =
-        products.find(
-            product => product.id === id
-        );
+        products.find(p => p.id === id);
+
+    if (!product) return;
 
 
-    const body =
-        document.getElementById(
-            "productModalBody"
-        );
+    const isFavorite =
+        favorites.includes(product.id);
 
 
-    body.innerHTML = `
+    document.getElementById("productDetail")
+        .innerHTML = `
 
-        <div class="product-detail">
+        <div class="product-detail-layout">
 
-            <div class="product-detail-image">
-                <span>
-                    ${product.emoji}
-                </span>
+            <div class="detail-image">
+
+                <img
+                    src="${product.image}"
+                    alt="${product.name}"
+                >
+
             </div>
 
-            <div class="product-detail-info">
+            <div class="detail-info">
 
-                <span class="product-category">
+                <span class="detail-category">
                     ${product.categoryName}
                 </span>
 
@@ -688,29 +658,50 @@ function openProduct(id) {
                 </h2>
 
                 <div class="rating">
-                    ⭐ ${product.rating}
-                    (${product.reviews} sharh)
+                    ★ ${product.rating}
+                    <span>
+                        (${product.reviews} ta sharh)
+                    </span>
                 </div>
 
-                <p>
+                <p class="detail-description">
                     ${product.description}
                 </p>
 
-                <div class="detail-price">
-                    ${formatPrice(product.price)}
+                <div>
+
+                    <span class="detail-price">
+                        ${formatPrice(product.price)}
+                    </span>
+
+                    <span class="detail-old">
+                        ${formatPrice(product.oldPrice)}
+                    </span>
+
                 </div>
 
-                <button
-                    class="primary-btn"
-                    onclick="addToCart(${product.id}); closeProductModal();"
-                    style="width:100%"
-                >
-                    🛒 Savatga qo‘shish
-                </button>
+                <div class="detail-actions">
+
+                    <button
+                        class="secondary-btn"
+                        onclick="toggleFavorite(${product.id}); openProduct(${product.id})"
+                    >
+                        ${isFavorite ? "♥ Sevimlidan olib tashlash" : "♡ Sevimliga qo‘shish"}
+                    </button>
+
+                    <button
+                        class="primary-btn"
+                        onclick="addToCart(${product.id}); closeModal('productModal')"
+                    >
+                        🛒 Savatga
+                    </button>
+
+                </div>
 
             </div>
 
         </div>
+
     `;
 
 
@@ -718,41 +709,116 @@ function openProduct(id) {
         .getElementById("productModal")
         .classList.add("show");
 
-    document.body.style.overflow = "hidden";
 }
 
 
-/* CLOSE PRODUCT */
+/* ================= FAVORITES ================= */
 
-function closeProductModal() {
+function toggleFavorite(id) {
+
+    if (favorites.includes(id)) {
+
+        favorites =
+            favorites.filter(item => item !== id);
+
+        showToast("Sevimlilardan olib tashlandi");
+
+    } else {
+
+        favorites.push(id);
+
+        showToast("Sevimlilarga qo‘shildi ❤️");
+
+    }
+
+    saveFavorites();
+
+    updateFavoriteCount();
+
+    renderProducts();
+
+}
+
+
+function updateFavoriteCount() {
+
+    document.getElementById("favoriteCount")
+        .textContent = favorites.length;
+
+}
+
+
+function openFavorites() {
+
+    const container =
+        document.getElementById("favoriteItems");
+
+    const favoriteProducts =
+        products.filter(product =>
+            favorites.includes(product.id)
+        );
+
+
+    if (favoriteProducts.length === 0) {
+
+        container.innerHTML = `
+            <div class="empty-state" style="display:block;padding:40px 0">
+                <div>❤️</div>
+                <h3>Sevimlilar bo‘sh</h3>
+                <p>Yoqtirgan mahsulotlaringiz shu yerda chiqadi.</p>
+            </div>
+        `;
+
+    } else {
+
+        container.innerHTML = "";
+
+        favoriteProducts.forEach(product => {
+
+            container.innerHTML += `
+
+                <div class="favorite-product">
+
+                    <img
+                        src="${product.image}"
+                        alt="${product.name}"
+                    >
+
+                    <div class="favorite-product-info">
+
+                        <h4>
+                            ${product.name}
+                        </h4>
+
+                        <p>
+                            ${formatPrice(product.price)}
+                        </p>
+
+                    </div>
+
+                    <button
+                        onclick="toggleFavorite(${product.id})"
+                    >
+                        ♥
+                    </button>
+
+                </div>
+
+            `;
+
+        });
+
+    }
+
 
     document
-        .getElementById("productModal")
-        .classList.remove("show");
+        .getElementById("favoritesModal")
+        .classList.add("show");
 
-    document.body.style.overflow = "";
 }
 
 
-/* FAVORITE */
-
-function toggleFavorite(event, id) {
-
-    event.stopPropagation();
-
-    const button =
-        event.currentTarget;
-
-    button.classList.toggle("active");
-
-    button.textContent =
-        button.classList.contains("active")
-            ? "♥"
-            : "♡";
-}
-
-
-/* AUTH */
+/* ================= AUTH ================= */
 
 function openAuth() {
 
@@ -760,94 +826,67 @@ function openAuth() {
         .getElementById("authModal")
         .classList.add("show");
 
-    document.body.style.overflow = "hidden";
 }
 
 
-function closeAuth() {
+function switchAuth() {
 
-    document
-        .getElementById("authModal")
-        .classList.remove("show");
+    loginMode = !loginMode;
 
-    document.body.style.overflow = "";
-}
+    const title =
+        document.getElementById("authTitle");
+
+    const description =
+        document.getElementById("authDescription");
+
+    const name =
+        document.getElementById("authName");
+
+    const button =
+        document.querySelector("#authForm .primary-btn");
+
+    const switchButton =
+        document.querySelector(".switch-auth");
 
 
-/* AUTH MODE */
+    if (loginMode) {
 
-function toggleAuthMode() {
+        title.textContent = "Hisobingizga kiring";
 
-    if (authMode === "login") {
+        description.textContent =
+            "Hisobingizga kirib xaridni davom ettiring.";
 
-        authMode = "register";
+        name.parentElement.style.display = "none";
 
-        document.getElementById(
-            "authTitle"
-        ).textContent =
-            "Hisob yarating";
+        name.required = false;
 
-        document.getElementById(
-            "authSubtitle"
-        ).textContent =
-            "Ro‘yxatdan o‘tish uchun ma’lumotlarni kiriting.";
+        button.textContent = "Kirish →";
 
-        document.getElementById(
-            "nameGroup"
-        ).classList.remove("hidden");
-
-        document.getElementById(
-            "authSwitchText"
-        ).textContent =
-            "Hisobingiz bormi?";
-
-        document.getElementById(
-            "authSwitchBtn"
-        ).textContent =
-            "Kirish";
-
-        document.querySelector(
-            ".auth-submit"
-        ).textContent =
-            "Ro‘yxatdan o‘tish";
+        switchButton.textContent =
+            "Hisobingiz yo‘qmi? Ro‘yxatdan o‘ting";
 
     } else {
 
-        authMode = "login";
+        title.textContent =
+            "Yangi hisob yarating";
 
-        document.getElementById(
-            "authTitle"
-        ).textContent =
-            "Xush kelibsiz!";
+        description.textContent =
+            "NovaShop bilan xarid qilishni boshlang.";
 
-        document.getElementById(
-            "authSubtitle"
-        ).textContent =
-            "Hisobingizga kirish uchun ma’lumotlarni kiriting.";
+        name.parentElement.style.display = "block";
 
-        document.getElementById(
-            "nameGroup"
-        ).classList.add("hidden");
+        name.required = true;
 
-        document.getElementById(
-            "authSwitchText"
-        ).textContent =
-            "Hisobingiz yo‘qmi?";
+        button.textContent =
+            "Ro‘yxatdan o‘tish →";
 
-        document.getElementById(
-            "authSwitchBtn"
-        ).textContent =
-            "Ro‘yxatdan o‘tish";
+        switchButton.textContent =
+            "Hisobingiz bormi? Kirish";
 
-        document.querySelector(
-            ".auth-submit"
-        ).textContent =
-            "Kirish";
     }
+
 }
 
-
-/* AUTH SUBMIT */
 
 document
     .getElementById("authForm")
@@ -855,102 +894,230 @@ document
 
         event.preventDefault();
 
+        const name =
+            document.getElementById("authName").value;
 
         const email =
-            document.getElementById(
-                "emailInput"
-            ).value.trim();
-
-        const password =
-            document.getElementById(
-                "passwordInput"
-            ).value.trim();
+            document.getElementById("authEmail").value;
 
 
-        if (!email || !password) {
-
-            showToast(
-                "!",
-                "Barcha maydonlarni to‘ldiring"
-            );
-
-            return;
-        }
+        localStorage.setItem(
+            "novashop_user",
+            JSON.stringify({
+                name: name,
+                email: email
+            })
+        );
 
 
-        if (authMode === "register") {
+        closeModal("authModal");
 
-            const name =
-                document.getElementById(
-                    "nameInput"
-                ).value.trim();
+        showToast(
+            loginMode
+                ? "Xush kelibsiz 👋"
+                : "Hisob muvaffaqiyatli yaratildi 🎉"
+        );
 
-
-            if (!name) {
-
-                showToast(
-                    "!",
-                    "Ismingizni kiriting"
-                );
-
-                return;
-            }
-
-
-            localStorage.setItem(
-                "shopuz_user",
-                JSON.stringify({
-                    name,
-                    email
-                })
-            );
-
-
-            showToast(
-                "✓",
-                "Hisob muvaffaqiyatli yaratildi"
-            );
-
-        } else {
-
-            localStorage.setItem(
-                "shopuz_user",
-                JSON.stringify({
-                    email
-                })
-            );
-
-
-            showToast(
-                "✓",
-                "Tizimga muvaffaqiyatli kirdingiz"
-            );
-        }
-
-
-        closeAuth();
-
-        this.reset();
     });
 
 
-/* TOAST */
+/* ================= CHECKOUT ================= */
+
+function checkout() {
+
+    if (cart.length === 0) {
+
+        showToast("Avval mahsulot qo‘shing");
+
+        return;
+
+    }
+
+
+    closeModal("cartModal");
+
+    document
+        .getElementById("checkoutModal")
+        .classList.add("show");
+
+}
+
+
+document
+    .getElementById("checkoutForm")
+    .addEventListener("submit", function(event) {
+
+        event.preventDefault();
+
+
+        const name =
+            document.getElementById("orderName").value;
+
+
+        cart = [];
+
+        saveCart();
+
+        updateCartCount();
+
+
+        closeModal("checkoutModal");
+
+
+        showToast(
+            `Rahmat, ${name}! Buyurtmangiz qabul qilindi 🎉`
+        );
+
+
+        document
+            .getElementById("checkoutForm")
+            .reset();
+
+    });
+
+
+/* ================= MODALS ================= */
+
+function closeModal(id) {
+
+    document
+        .getElementById(id)
+        .classList.remove("show");
+
+}
+
+
+document.querySelectorAll(".modal")
+    .forEach(modal => {
+
+        modal.addEventListener("click", function(event) {
+
+            if (event.target === modal) {
+
+                modal.classList.remove("show");
+
+            }
+
+        });
+
+    });
+
+
+document.addEventListener("keydown", function(event) {
+
+    if (event.key === "Escape") {
+
+        document
+            .querySelectorAll(".modal.show")
+            .forEach(modal =>
+                modal.classList.remove("show")
+            );
+
+    }
+
+});
+
+
+/* ================= THEME ================= */
+
+function toggleTheme() {
+
+    document.body.classList.toggle("dark");
+
+    const dark =
+        document.body.classList.contains("dark");
+
+
+    document.getElementById("themeIcon")
+        .textContent = dark ? "☀️" : "🌙";
+
+
+    localStorage.setItem(
+        "novashop_theme",
+        dark ? "dark" : "light"
+    );
+
+}
+
+
+if (
+    localStorage.getItem("novashop_theme") === "dark"
+) {
+
+    document.body.classList.add("dark");
+
+    document.getElementById("themeIcon")
+        .textContent = "☀️";
+
+}
+
+
+/* ================= MOBILE MENU ================= */
+
+function toggleMobileMenu() {
+
+    document
+        .getElementById("mobileMenu")
+        .classList.toggle("show");
+
+}
+
+
+function closeMobileMenu() {
+
+    document
+        .getElementById("mobileMenu")
+        .classList.remove("show");
+
+}
+
+
+/* ================= NAVIGATION ================= */
+
+function scrollToProducts() {
+
+    document
+        .getElementById("products")
+        .scrollIntoView({
+            behavior: "smooth"
+        });
+
+}
+
+
+function scrollToCategories() {
+
+    document
+        .getElementById("categories")
+        .scrollIntoView({
+            behavior: "smooth"
+        });
+
+}
+
+
+function goHome() {
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+
+}
+
+
+/* ================= TOAST ================= */
 
 let toastTimer;
 
 
-function showToast(icon, message) {
+function showToast(message) {
 
     const toast =
         document.getElementById("toast");
 
-    document.getElementById(
-        "toastIcon"
-    ).textContent = icon;
-
-    document.getElementById(
-        "toastText"
-    ).textContent = message;
+    document.getElementById("toastText")
+        .textContent = message;
 
 
     toast.classList.add("show");
@@ -964,93 +1131,14 @@ function showToast(icon, message) {
         toast.classList.remove("show");
 
     }, 2500);
+
 }
 
 
-/* MOBILE MENU */
-
-function toggleMenu() {
-
-    document
-        .getElementById("mobileMenu")
-        .classList.toggle("show");
-}
-
-
-function closeMenu() {
-
-    document
-        .getElementById("mobileMenu")
-        .classList.remove("show");
-}
-
-
-/* SCROLL */
-
-function scrollToProducts() {
-
-    document
-        .getElementById("products")
-        .scrollIntoView({
-            behavior: "smooth"
-        });
-}
-
-
-function scrollToCategories() {
-
-    document
-        .getElementById("categories")
-        .scrollIntoView({
-            behavior: "smooth"
-        });
-}
-
-
-function showHome() {
-
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
-}
-
-
-/* MODAL OUTSIDE CLICK */
-
-document.querySelectorAll(".modal").forEach(modal => {
-
-    modal.addEventListener("click", event => {
-
-        if (event.target === modal) {
-
-            modal.classList.remove("show");
-
-            document.body.style.overflow = "";
-        }
-    });
-});
-
-
-/* ESC */
-
-document.addEventListener("keydown", event => {
-
-    if (event.key === "Escape") {
-
-        document
-            .querySelectorAll(".modal")
-            .forEach(modal =>
-                modal.classList.remove("show")
-            );
-
-        document.body.style.overflow = "";
-    }
-});
-
-
-/* INITIALIZE */
+/* ================= START ================= */
 
 renderProducts();
 
 updateCartCount();
+
+updateFavoriteCount();
